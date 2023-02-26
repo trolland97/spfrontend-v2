@@ -1,0 +1,1047 @@
+
+$mainColor: #BF0F0F;
+$secondColor: #D9D9D9;
+$posRelative: relative;
+$posAbsolute: absolute;
+$posCenter: center;
+$colorWhite: white;
+$colorBlack: black;
+
+
+@mixin columnCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin rowCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin pseudoElement {
+    content: '';
+    position: absolute;
+}
+
+@mixin columnFlexStart {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+body {
+	font-family: 'Roboto';
+	margin: 0;
+	padding: 0;
+	background-color: $colorWhite;
+}
+
+.dropbtn {
+    color: black;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    background-color: $secondColor;
+  }
+
+  .dropdown {
+    position: $posRelative;
+    display: none;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: $posAbsolute;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 0px 15px;
+    border-radius: 10px;
+    text-align: $posCenter;
+    border: 1px solid #bf0f0f;
+  }
+
+  .dropdown-content span {
+    color: $colorWhite;
+    font-size: 12px;
+    @include columnCenter;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: $colorWhite;
+}
+
+.show {
+    display: block;
+}
+
+.popup {
+    background-color: $colorBlack;
+    width: 200px;
+    padding: 15px 25px;
+    position: $posAbsolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    display: none;
+    text-align: $posCenter;
+}
+
+.popup button {
+    display: block;
+    margin: 0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: $colorWhite;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup h2 {
+    color: $colorWhite;
+}
+
+.popup a {
+    display: block;
+    width: 150px;
+    position: $posRelative;
+    margin: 10px auto;
+    text-align: center;
+    background-color: $mainColor;
+    color: $colorWhite;
+    text-decoration: none;
+    padding: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close {
+    color: $mainColor;
+}
+
+.dark-mode {
+    background-color: #52595D;
+    color: $colorWhite;
+}
+
+.darkmodeBtn {
+    text-decoration: none;
+    border: 0;
+    background-color: $mainColor;
+    cursor: pointer;
+    color: $colorWhite;
+}
+
+.headerContainer {
+    @include rowCenter;
+    background-color: $secondColor;
+    height: 75px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.headerContainer ul,
+li {
+    @include rowCenter;
+    gap: 1rem;
+}
+
+.headerContainer li {
+    text-decoration: underline;
+}
+
+.headerContainer li:first-child {
+    color: rgba(136, 135, 135, 1);
+    text-decoration: none;
+}
+
+.header {
+    @include rowCenter;
+    gap: 60rem;
+}
+
+.navigationContainer {
+    @include rowCenter;
+    max-width: 100%;
+    margin: auto;
+}
+
+.navigationElements {
+    @include rowCenter;
+}
+
+.navigationElement {
+    padding-left: 35px;
+    padding-right: 35px;
+    height: 65px;
+    @include columnCenter;
+    border-right: 0.5px solid #888787;
+}
+
+.navigationElement:first-child {
+    border-left: 0.5px solid #888787;
+}
+
+.navigationElementDescription {
+    font-size: 12px;
+    color: $colorBlack;
+}
+
+.navigationElement a {
+    text-decoration: none;
+    color: $colorBlack;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: $posRelative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: $posAbsolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: $colorWhite;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.homeContainer {
+    display: flex;
+    gap: 3rem;
+    padding-bottom: 25px;
+}
+
+.homeImg {
+    bottom: 70px;
+    margin: auto;
+    width: 100%;
+    height: 504px;
+    left: 0;
+
+}
+
+.companyContainer {
+    position: $posRelative;
+    height: 504px;
+    width: 100%;
+    margin: auto;
+}
+
+.titleName {
+    text-align: left;
+    position: $posRelative;
+    padding-bottom: 20px;
+    color: #303030;
+}
+
+.titleName::after {
+    content: "";
+    position: $posAbsolute;
+    background-color: $mainColor;
+    width: 137px;
+    height: 6px;
+    bottom: 0;
+    left: 0;
+}
+
+.titleProff {
+    padding-top: 5px;
+    padding-bottom: 30px;
+    width: 500px;
+    font-size: 30px;
+    position: $posRelative;
+    color: #474747;
+}
+
+.titleProff::after {
+    content: "";
+    position: $posAbsolute;
+    background-color: $secondColor;
+    width: 500px;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+}
+
+.titleDesc {
+    text-align: left;
+    color: #474747;
+}
+
+.buttonInfo {
+    background-color: $mainColor;
+    color: $colorWhite;
+    padding: 15px 32px;
+    text-align: $posCenter;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    bottom: 0;
+    position: $posAbsolute;
+    border-radius: 5px;
+}
+
+.fixedImage {
+    height: 502px;
+    background-image: url("../assets/images/fixedImage.jpg");
+    background-size: cover;
+    background-position: $posCenter;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    @include rowCenter;
+    width: 100%;
+}
+
+.fixedDesc span {
+    position: $posRelative;
+    font-size: 35px;
+    color: $colorWhite;
+    letter-spacing: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: $posCenter;
+    align-items: $posCenter;
+    padding-bottom: 20px;
+}
+
+.fixedDesc span::after {
+    @include pseudoElement;
+    background-color: $mainColor;
+    width: 137px;
+    height: 6px;
+    bottom: 0;
+}
+
+.distributionContainer {
+    padding-top: 100px;
+    width: 100%;
+    text-align: $posCenter;
+    @include rowCenter;
+    gap: 2rem;
+}
+
+.dImages {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.dImages img {
+    width: 400px;
+    height: 278px;
+}
+
+.description {
+    position: $posRelative;
+    padding-bottom: 5px;
+    color: #474747;
+}
+
+.description::after {
+    @include pseudoElement;
+    background-color: $mainColor;
+    width: 50px;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+}
+
+.nameContainer {
+    width: 100%;
+    height: 150px;
+    text-align: $posCenter;
+    margin-top: 60px;
+}
+
+.name {
+    font-size: 50px;
+    text-align: $posCenter;
+    color: #303030;
+}
+
+.secondName {
+    @include columnCenter;
+    text-align: $posCenter;
+    font-size: 25px;
+    position: $posRelative;
+    padding-bottom: 10px;
+    color: #474747;
+}
+
+.secondName::after {
+    @include pseudoElement;
+    background-color: $mainColor;
+    width: 137px;
+    height: 6px;
+    bottom: 0;
+}
+
+.aboutContainer {
+    background-image: url('../assets/images/Rectangle 140.png');      
+    @include rowCenter;
+}
+
+.aboutElement {
+    @include columnCenter;
+    height: 152px;
+    width: 100%;
+    border-left: 1px solid #888787;
+    color: $colorWhite;
+}
+
+.aboutElement:first-child {
+    border: none;
+}
+
+.productsContainer {
+    background-color: $secondColor;
+    position: $posRelative;
+    padding-bottom: 50px;
+
+}
+
+.productsTitle {
+    color: #474747;
+    @include columnFlexStart;
+}
+
+.productsTitle::after {
+    @include pseudoElement;
+    background-color: $secondColor;
+    width: 524px;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+}
+
+.productsDesc {
+    color: #474747;
+    text-align: $posCenter;
+    margin: auto;
+    width: 50%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: $secondColor;
+    display: grid ;
+    place-items: center
+  }
+  
+  #slider-container {
+    height: 350px;
+    width: 85vw;
+    max-width: 1400px;
+    background: $secondColor;
+    position: $posRelative;
+    overflow: hidden;
+    padding: 20px;
+  }
+  
+  #slider-container .btn {
+    position: $posAbsolute;
+    top: calc(50% - 30px);
+    height: 30px;
+    width: 30px;
+    border-left: 8px solid $mainColor;
+    border-top: 8px solid $mainColor;
+  }
+  
+  #slider-container .btn:hover {
+    transform: scale(1.2);
+  }
+  
+  #slider-container .btn.inactive {
+    border-color: $colorBlack;
+  }
+  
+  #slider-container .btn:first-of-type {
+    transform: rotate(-45deg);
+    left: 10px
+  }
+  
+  #slider-container .btn:last-of-type {
+    transform: rotate(135deg);
+    right: 10px;
+  }
+  
+  #slider-container #slider {
+    display: flex;
+    width: 1000%;
+    height: 100%; 
+    transition: all .5s;
+  }
+  
+  #slider-container #slider .slide {
+    height: 90%;
+    margin: auto 10px;
+    background-color: $secondColor;
+    display: grid;
+    place-items: $posCenter;
+  }
+
+  .cards {
+    position: $posRelative;
+    display: flex;
+    justify-content: $posCenter;
+    align-items: $posCenter;
+  }
+
+  .cardDesc {
+    position: $posAbsolute;
+    padding-bottom: 5px;
+    color: #474747;
+    bottom: 10px;
+    left: 2px;
+}
+
+.cardDesc::after {
+    @include pseudoElement;
+    background-color: $mainColor;
+    width: 50px;
+    height: 6px;
+    bottom: 0;
+    left: 0;
+}
+
+.productsLogo {
+    position: $posAbsolute;
+    left: 0;
+    bottom: -25px;
+}
+
+.brandContainer {
+    padding-bottom: 10px;
+}
+
+.brandTitle {
+    color: $colorBlack;
+    @include columnCenter;
+    width: 35%;
+    margin: auto;
+    text-align: $posCenter;
+    color: #474747;
+}
+
+.brandTitle::after {
+    @include pseudoElement;
+    background-color: #c4c4c4;
+    width: 524px;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+}
+
+.brandsCard {
+    @include rowCenter;
+    gap: 5rem;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.brands {
+    @include columnCenter;
+}
+
+.brands img {
+    width: 100px;
+    height: 50px;
+}
+
+.brandDesc {
+    text-align: $posCenter;
+    bottom: 25px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    color: #474747;
+}
+
+.buttonBrands {
+    background-color: $mainColor;
+    color: $colorWhite;
+    padding: 15px 32px;
+    text-align: $posCenter;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    bottom: 0;
+    @include rowCenter;
+    width: 150px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.footerContainer {
+    background-image: url('../assets/images/footerbg.png');
+    background-size: cover;
+    background-position: $posCenter;
+    position: $posRelative;
+    padding-bottom: 100px;
+}
+
+.footerContents {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: $posCenter;
+    align-items: flex-start;
+    gap: 10rem;
+}
+
+.footerContacts {
+    color: $colorWhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    height: 200px;
+    border-left: 2px solid rgba(255, 255, 255, 0.26);
+    padding: 0px 0px 10px 25px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 200px;
+    gap: 1rem;
+}
+
+.contacts a {
+    color: $colorWhite;
+}
+
+.footerCompanyName {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.footerNavbar {
+    color: $colorWhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    height: 200px;
+    font-size: 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.26);
+    padding: 0px 0px 10px 25px;
+}
+
+.footerNavbar a {
+    color: $colorWhite;
+    text-decoration: none;
+}
+
+.footerSocialmedia {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 12px;
+    gap: 2rem;
+    height: 200px;
+    border-left: 1px solid rgba(255, 255, 255, 0.26);
+    padding: 0px 0px 15px 25px;
+}
+
+.copyrightContent {
+    position: $posAbsolute;
+    bottom: 0;
+    height: 65px;
+    width: 100%;
+    background-color: $colorBlack;
+    opacity: 0.5;
+    color: $colorWhite;
+}
+
+.copyright {
+    @include rowCenter;
+    gap: 10rem;
+}
+
+.copyright a {
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 15px;
+}
+
+.copyright span {
+    margin-top: 15px;
+}
+
+/* Responsibility */
+
+@media only screen and (max-width: 1800px) {
+    .header {
+        @include rowCenter;
+        gap: 40rem;
+    }
+
+}
+
+@media only screen and (max-width: 1500px) {
+
+    .copyright {
+        gap: 5rem;
+    }
+
+}
+
+@media only screen and (max-width: 1375px) {
+    .header {
+        @include rowCenter;
+        gap: 20rem;
+    }
+
+}
+
+@media only screen and (max-width: 1250px) {
+
+    .copyright {
+        gap: 2rem;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .homeImg {
+        display: flex;
+        justify-content: $posCenter;
+        align-items: $posCenter;
+    }
+    
+    .homeContainer {
+        @include columnCenter;
+    }
+
+    .companyContainer {
+        @include columnCenter;
+    }
+
+    .titleDesc {
+        text-align: $posCenter;
+    }
+
+    .moreInfo {
+        @include columnCenter;
+    }
+
+    .distributionContainer {
+        @include columnCenter;
+    }
+
+    .brandsCard {
+        @include columnCenter;
+    }
+    .navigationContainer {
+        display: none;
+    }
+
+    .dropdown {
+        display: block;
+    }
+    .header {
+        @include rowCenter;
+        gap: 10rem;
+        padding: 0;
+    }
+
+    .dropdown-content span {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 1100px) {
+  
+    #slider-container #slider .slide {
+      width: calc(2.5% - 20px);
+    }
+  
+  }
+  
+  @media only screen and (max-width: 1100px) {
+  
+    #slider-container #slider .slide {
+      width: calc(3.3333333% - 20px);
+    }
+  
+  }
+
+@media only screen and (max-width: 1070px) {
+    .footerContents {
+        padding-top: 50px;
+        @include columnCenter;
+        gap: 2rem;
+        border: none;
+
+    }
+
+    .footerContacts {
+        border: none;
+    }
+
+    .footerNavbar {
+        border: none;
+    }
+
+    .footerSocialmedia {
+        border: none;
+    }
+
+    .copyright {
+        @include columnCenter;
+    }
+
+    .copyrightContent {
+        height: 200px;
+    }
+
+    .copyright span {
+        text-align: $posCenter;
+        margin-top: 0;
+    }
+    .copyright a {
+        margin-top: 0;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .header {
+        @include rowCenter;
+        gap: 6rem;
+        padding: 0;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    .header ul {
+        display: none;
+    }
+
+    .header {
+        @include columnCenter;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .headerContainer {
+        @include columnCenter;
+        height: 120px;
+    }
+
+    .dropdown-content span {
+        display: block;
+    }
+
+    #slider-container #slider .slide {
+        width: calc(5% - 20px);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .aboutContainer {
+        @include columnCenter;
+
+    }
+    .fixedDesc span {
+        display: flex;
+        justify-content: $posCenter;
+        align-items: $posCenter;
+        width: 100%;
+        text-align: $posCenter;
+        font-size: 20px;
+
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .homeImg img {
+        width: 100%;
+        position: $posRelative;
+        height: 100%;
+        top: 50px;
+
+    }
+
+    .headerContainer {
+        width: 100% !important;
+    }
+
+    .titleProff {
+        width: 100%;
+        text-align: $posCenter;
+    }
+
+    .companyContainer {
+        margin-top: 55px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .homeImg img {
+        width: 100%;
+        height: 100%;
+        top: 40px;
+        position: $posRelative;
+
+    }
+
+    .titleDesc {
+        font-size: 15px;
+    }
+
+    .companyContainer {
+        margin-top: 50px;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+  
+    #slider-container #slider .slide {
+      width: calc(10% - 20px);
+    }
+  
+}
+
+@media only screen and (max-width: 524px) {
+    .productsTitle::after {
+        width: 100%;
+    }
+
+    .titleProff::after {
+        width: 100%;
+    }
+
+    .brandTitle::after {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .homeImg img {
+        width: 100%;
+        position: $posRelative;
+        height: 100%;
+        top: 25px;
+
+    }
+
+    .companyContainer {
+        margin-top: 25px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .dImages img {
+        width: 100%;
+
+    }
+
+    .titleDesc {
+        font-size: 10px;
+    }
+
+    .name {
+        font-size: 25px;
+        text-align: $posCenter;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .popup a {
+        width: 75px;
+    }
+
+    .companyContainer {
+        margin-top: 0;
+    }
+
+}
+
+@media only screen and (max-width: 350px) {
+    .popup {
+        width: 50%;
+    }
+    .header {
+        @include columnCenter;
+        gap: 1rem;
+        padding: 0;
+    }
+
+    .headerContainer {
+        height: 115px;
+    }
+}
+
+
+
+
+
+
+
+
+
