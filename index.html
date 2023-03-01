@@ -10,85 +10,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
 </head>
 
 <body>
 
-    <div class="headerContainer">
-        <div class="header">
-            <div>
-                <img src="assets/images/logo.png" width="218" height="44" alt="logo" />
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn" onclick="dropDown()"><i class="fa-solid fa-bars"></i></button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="#">O NAMA</a>
-                    <a href="#">DVG PROIZVODI</a>
-                    <a href="#">BRENDOVI</a>
-                    <a href="#">DISTRIBUCIJA</a>
-                    <a href="#">SARADNJA</a>
-                    <a href="#">NOVOSTI</a>
-                    <a href="#">KONTAKT</a>
-                    <span>Srpski</span>
-                    <span>English</span>
-                    <span>Magyar</span>
-                    <button class="darkmodeBtn" onclick="darkMode()">Dark Mode</button>
-                </div>
-            </div>
-            <ul>
-                <li>Srpski</li>
-                <li>English</li>
-                <li>Magyar</li>
+    <div class="topnav" id="myTopnav">
+        <div class="topnav-content">
+            <img src="assets/images/logo.png" width="218" height="44" alt="logo" />
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i></a>
+            <div class="topnav-element">
+                <span>Srpski</span>
+                <span>English</span>
+                <span>Magyar</span>
                 <button class="darkmodeBtn" onclick="darkMode()">Dark Mode</button>
-            </ul>
+            </div>
         </div>
+        <a href="#">O NAMA</a>
+        <a href="#">DVG PROIZVODI</a>
+        <a href="#">BRENDOVI</a>
+        <a href="#">DISTRIBUCIJA</a>
+        <a href="#">SARADNJA</a>
+        <a href="#">NOVOSTI</a>
+        <a href="#">KONTAKT</a>
+        <a>Srpski</a>
+        <a>English</a>
+        <a>Magyar</a>
+        <a><button class="darkmodeBtn" onclick="darkMode()">Dark Mode</button></a>
     </div>
 
     <div class="navigationContainer">
         <div class="navigationElements">
-            <div class="navigationElement">
-                <a href="#">
+            <a href="#">
+                <div class="navigationElement">
                     <span>O NAMA</span>
-                </a>
-                <span class="navigationElementDescription">vizija za uspeh</span>
-            </div>
-            <div class="navigationElement">
-                <a href="#">
+                    <span class="navigationElementDescription">vizija za uspeh</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="navigationElement">
                     <span>DVG PROIZVODI</span>
-                </a>
-                <span class="navigationElementDescription">naši proizvodi</span>
-            </div>
-            <div class="navigationElement">
-                <a href="#">
+                    <span class="navigationElementDescription">naši proizvodi</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="navigationElement">
                     <span>BRENDOVI</span>
-                </a>
-                <span class="navigationElementDescription">koje zasupamo</span>
-            </div>
-            <div class="navigationElement">
-                <a href="#">
+                    <span class="navigationElementDescription">koje zasupamo</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="navigationElement">
                     <span>DISTRIBUCIJA</span>
-                </a>
-                <span class="navigationElementDescription">logistika i operativa</span>
-            </div>
-            <div class="navigationElement">
-                <a href="#">
+                    <span class="navigationElementDescription">logistika i operativa</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="navigationElement">
                     <span>SARADNJA</span>
-                </a>
-                <span class="navigationElementDescription">poširenje ponude</span>
-            </div>
-            <div class="navigationElement">
-                <a href="#">
+                    <span class="navigationElementDescription">poširenje ponude</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="navigationElement">
                     <span>NOVOSTI</span>
-                </a>
-                <span class="navigationElementDescription">aktuelnosti</span>
-            </div>
-            <div class="navigationElement">
-                <a href="#">
+                    <span class="navigationElementDescription">aktuelnosti</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="navigationElement">
                     <span>KONTAKT</span>
-                </a>
-                <span class="navigationElementDescription">kontaktirajte nas</span>
-            </div>
+                    <span class="navigationElementDescription">kontaktirajte nas</span>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -176,7 +172,7 @@
     </div>
     <div class="productsContainer" data-aos="fade-up">
         <div class="productsTitle">
-            <h1>Nasi proizvodi</h1>
+            <span>Nasi proizvodi</span>
         </div>
         <div class="productsDesc"><span>Naše proizvode DVG Cosmetics odlikuje visok kvalitet kojim se dobija kompletna
                 nega lica i tela. Uspeli smo da uskladimo kvalitet i cenu, što su prepoznali i naši kupci.</span></div>
@@ -212,7 +208,7 @@
                     <div class="slide">
                         <div class="cards">
                             <img src="assets/images/card5.png" alt="card5">
-                            <span class="cardDesc">PLASTICNE KANTE</span>
+                            <span class="cardDesc">PLASTIČNE KANTE</span>
                         </div>
                     </div>
                 </div>
@@ -227,7 +223,7 @@
     </div>
     <div class="brandContainer" data-aos="fade-up">
         <div class="brandTitle">
-            <h1>Istaknuti brendovi za koje radimo distribuciju</h1>
+            <span>Istaknuti brendovi za koje radimo distribuciju</span>
         </div>
         <div class="brandsCard">
             <div class="brands">
@@ -256,7 +252,7 @@
             </div>
         </div>
         <div class="moreBrands">
-            <a href="#" class="buttonBrands">Svi brendovi u nasem portfoliju</a>
+            <a href="#" class="buttonBrands">Svi brendovi u našem portfoliju</a>
         </div>
     </div>
     <div class="footerContainer">
@@ -266,7 +262,9 @@
                 <span class="footerCompanyName">D.V.G. COMPANY</span>
                 <div class="contacts">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span>Čantavirski put bb 24000 Subotica, Srbija</span>
+                    <a
+                        href="https://www.google.com/maps/place/Studio+Present/@46.0942344,19.652049,17z/data=!3m1!4b1!4m6!3m5!1s0x474366c5e52458f1:0xd42b63ef50d3c91f!8m2!3d46.0942344!4d19.6542377!16s%2Fg%2F1tksm3yy">Čantavirski
+                        put bb 24000 Subotica, Srbija</a>
                 </div>
                 <div class="contacts">
                     <i class="fa-solid fa-phone"></i>
@@ -289,26 +287,25 @@
             <div class="footerSocialmedia">
                 <span style="color:white; font-size: 12pt;">Pratite nas:</span>
                 <div class="smlogos">
-                    <a href="#"><i class="fa-brands fa-facebook-f" style="color: white; font-size: 12pt;"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter" style="color: white; font-size: 12pt;"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube" style="color: white; font-size: 12pt;"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook-messenger"
-                            style="color: white; font-size: 12pt;"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-messenger"></i></a>
                 </div>
             </div>
         </div>
         <div class="copyrightContent">
             <div class="copyright">
-                <span>Copyright @ 2021 DVG Company, Subotica d.o.o. Sva prava zadrzana</span>
+                <span>Copyright @ 2021 DVG Company, Subotica d.o.o. Sva prava zadržana</span>
                 <a href="#">Privatnost podataka</a>
-                <a href="#">Uslovi koriscenja</a>
+                <a href="#">Uslovi korišćenja</a>
                 <span>Powered by: <a href="#">Studio Present</a></span>
             </div>
         </div>
     </div>
     <div class="popup">
         <button id="close">&times;</button>
-        <h2>Dobro dosli na sajt DVG Company</h2>
+        <h2>Dobro došli na sajt DVG Company</h2>
         <a id="continue">Nastavi</a>
     </div>
 </body>

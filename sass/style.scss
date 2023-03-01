@@ -1,4 +1,3 @@
-
 $mainColor: #BF0F0F;
 $secondColor: #D9D9D9;
 $posRelative: relative;
@@ -6,6 +5,9 @@ $posAbsolute: absolute;
 $posCenter: center;
 $colorWhite: white;
 $colorBlack: black;
+$fontInter: 'Inter';
+$fontRC: 'Roboto Condensed';
+
 
 
 @mixin columnCenter {
@@ -36,54 +38,58 @@ $colorBlack: black;
 
 
 body {
-	font-family: 'Roboto';
-	margin: 0;
-	padding: 0;
-	background-color: $colorWhite;
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    background-color: $colorWhite;
 }
 
-.dropbtn {
-    color: black;
-    padding: 12px;
-    font-size: 15px;
-    border: none;
+/*Hamburger menu */
+
+.topnav {
+    background-color: #D9D9D9;
+    overflow: hidden;
+
+}
+
+.topnav-element span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #595959;
     cursor: pointer;
-    background-color: $secondColor;
-  }
-
-  .dropdown {
-    position: $posRelative;
-    display: none;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: $posAbsolute;
-    background-color: rgb(0, 0, 0);
-    opacity: 0.9;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    padding: 0px 15px;
-    border-radius: 10px;
-    text-align: $posCenter;
-    border: 1px solid #bf0f0f;
-  }
-
-  .dropdown-content span {
-    color: $colorWhite;
-    font-size: 12px;
-    @include columnCenter;
 }
 
-.dropdown-content a {
+.topnav-element span:hover {
+    color: $mainColor;
+}
+
+.topnav-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    color: $colorWhite;
+    font-size: 17px;
+    display: none;
 }
 
-.show {
-    display: block;
+.topnav a:hover {
+    color: #BF0F0F;
 }
+
+.topnav .icon {
+    display: none;
+}
+
+/*Popup*/
 
 .popup {
     background-color: $colorBlack;
@@ -131,6 +137,8 @@ body {
     color: $mainColor;
 }
 
+/*DarkMode*/
+
 .dark-mode {
     background-color: #52595D;
     color: $colorWhite;
@@ -143,6 +151,12 @@ body {
     cursor: pointer;
     color: $colorWhite;
 }
+
+.darkmodeBtn:hover {
+    color: $colorBlack;
+}
+
+/*Header*/
 
 .headerContainer {
     @include rowCenter;
@@ -172,6 +186,8 @@ li {
     gap: 60rem;
 }
 
+/*Navbar*/
+
 .navigationContainer {
     @include rowCenter;
     max-width: 100%;
@@ -182,12 +198,25 @@ li {
     @include rowCenter;
 }
 
+.navigationElements a {
+    text-decoration: none;
+}
+
+.navigationElements a:hover {
+    background-color: $mainColor;
+}
+
 .navigationElement {
     padding-left: 35px;
     padding-right: 35px;
     height: 65px;
     @include columnCenter;
     border-right: 0.5px solid #888787;
+    font-family: $fontRC;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
 }
 
 .navigationElement:first-child {
@@ -195,14 +224,19 @@ li {
 }
 
 .navigationElementDescription {
-    font-size: 12px;
-    color: $colorBlack;
+    font-size: 16px;
+    color: #474747;
+    font-family: $fontRC;
+    line-height: 26px;
+    font-weight: 400;
 }
 
 .navigationElement a {
     text-decoration: none;
     color: $colorBlack;
 }
+
+/*Slide show*/
 
 .slideshow-container {
     max-width: 100%;
@@ -255,10 +289,14 @@ li {
     }
 }
 
+/*Home Section*/
+
 .homeContainer {
     display: flex;
-    gap: 3rem;
-    padding-bottom: 25px;
+    gap: 1rem;
+    padding-bottom: 70px;
+    background-color: #F4F4F4;
+    padding-top: 73px;
 }
 
 .homeImg {
@@ -282,6 +320,9 @@ li {
     position: $posRelative;
     padding-bottom: 20px;
     color: #303030;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 34px;
 }
 
 .titleName::after {
@@ -298,16 +339,19 @@ li {
     padding-top: 5px;
     padding-bottom: 30px;
     width: 500px;
-    font-size: 30px;
+    font-size: 28px;
     position: $posRelative;
     color: #474747;
+    font-family: $fontInter;
+    font-weight: 400;
+    line-height: 34px;
 }
 
 .titleProff::after {
     content: "";
     position: $posAbsolute;
     background-color: $secondColor;
-    width: 500px;
+    width: 524px;
     height: 3px;
     bottom: 0;
     left: 0;
@@ -316,12 +360,15 @@ li {
 .titleDesc {
     text-align: left;
     color: #474747;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22.4px;
 }
 
 .buttonInfo {
     background-color: $mainColor;
     color: $colorWhite;
-    padding: 15px 32px;
+    padding: 15px 16px;
     text-align: $posCenter;
     text-decoration: none;
     font-size: 16px;
@@ -330,6 +377,12 @@ li {
     position: $posAbsolute;
     border-radius: 5px;
 }
+
+.buttonInfo:hover {
+    color: $colorBlack;
+}
+
+/*Fixed Image Section*/
 
 .fixedImage {
     height: 502px;
@@ -362,12 +415,14 @@ li {
     bottom: 0;
 }
 
+/*Distribution Section*/
+
 .distributionContainer {
     padding-top: 100px;
     width: 100%;
     text-align: $posCenter;
     @include rowCenter;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .dImages {
@@ -384,8 +439,11 @@ li {
 
 .description {
     position: $posRelative;
-    padding-bottom: 5px;
+    padding-bottom: 11px;
     color: #474747;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 22px;
 }
 
 .description::after {
@@ -397,23 +455,30 @@ li {
     bottom: 0;
 }
 
+/*About Section*/
+
 .nameContainer {
     width: 100%;
     height: 150px;
     text-align: $posCenter;
-    margin-top: 60px;
+    margin-top: 148px;
 }
 
 .name {
-    font-size: 50px;
+    font-size: 42px;
     text-align: $posCenter;
     color: #303030;
+    font-weight: 700;
+    line-height: 34px
 }
 
 .secondName {
     @include columnCenter;
     text-align: $posCenter;
-    font-size: 25px;
+    font-size: 28px;
+    font-weight: 400;
+    font-family: $fontInter;
+    line-height: 34px;
     position: $posRelative;
     padding-bottom: 10px;
     color: #474747;
@@ -428,8 +493,10 @@ li {
 }
 
 .aboutContainer {
-    background-image: url('../assets/images/Rectangle 140.png');      
+    background-image: url('../assets/images/Rectangle 140.png');
     @include rowCenter;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .aboutElement {
@@ -444,24 +511,32 @@ li {
     border: none;
 }
 
+/*Products Section*/
+
 .productsContainer {
-    background-color: $secondColor;
+    background-color: #F4F4F4;
     position: $posRelative;
     padding-bottom: 50px;
 
 }
 
 .productsTitle {
+    padding-top: 92px;
     color: #474747;
     @include columnFlexStart;
+    font-family: $fontInter;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 34px;
+    position: relative;
+    padding-bottom: 60px;
 }
 
 .productsTitle::after {
     @include pseudoElement;
-    background-color: $secondColor;
+    background-color: rgba(196, 196, 196, 0.4);
     width: 524px;
     height: 3px;
-    left: 0;
     bottom: 0;
 }
 
@@ -470,85 +545,93 @@ li {
     text-align: $posCenter;
     margin: auto;
     width: 50%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22.4px;
 }
+
+/*Card Slider Section*/
 
 #container {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    background: $secondColor;
-    display: grid ;
+    background: #F4F4F4;
+    display: grid;
     place-items: center
-  }
-  
-  #slider-container {
+}
+
+#slider-container {
     height: 350px;
     width: 85vw;
     max-width: 1400px;
-    background: $secondColor;
+    background: #F4F4F4;
     position: $posRelative;
     overflow: hidden;
     padding: 20px;
-  }
-  
-  #slider-container .btn {
+}
+
+#slider-container .btn {
     position: $posAbsolute;
     top: calc(50% - 30px);
     height: 30px;
     width: 30px;
     border-left: 8px solid $mainColor;
     border-top: 8px solid $mainColor;
-  }
-  
-  #slider-container .btn:hover {
+}
+
+#slider-container .btn:hover {
     transform: scale(1.2);
-  }
-  
-  #slider-container .btn.inactive {
+}
+
+#slider-container .btn.inactive {
     border-color: $colorBlack;
-  }
-  
-  #slider-container .btn:first-of-type {
+}
+
+#slider-container .btn:first-of-type {
     transform: rotate(-45deg);
     left: 10px
-  }
-  
-  #slider-container .btn:last-of-type {
+}
+
+#slider-container .btn:last-of-type {
     transform: rotate(135deg);
     right: 10px;
-  }
-  
-  #slider-container #slider {
+}
+
+#slider-container #slider {
     display: flex;
     width: 1000%;
-    height: 100%; 
+    height: 100%;
     transition: all .5s;
-  }
-  
-  #slider-container #slider .slide {
+}
+
+#slider-container #slider .slide {
     height: 90%;
     margin: auto 10px;
-    background-color: $secondColor;
+    background-color: #F4F4F4;
     display: grid;
     place-items: $posCenter;
-  }
+}
 
-  .cards {
+.cards {
     position: $posRelative;
     display: flex;
     justify-content: $posCenter;
     align-items: $posCenter;
-  }
+}
 
-  .cardDesc {
+.cardDesc {
     position: $posAbsolute;
-    padding-bottom: 5px;
+    padding-bottom: 11px;
     color: #474747;
-    bottom: 10px;
+    bottom: 15px;
     left: 2px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 22px;
 }
 
 .cardDesc::after {
@@ -566,25 +649,32 @@ li {
     bottom: -25px;
 }
 
+/*Brands Section*/
+
 .brandContainer {
     padding-bottom: 10px;
+    padding-top: 83px;
 }
 
 .brandTitle {
-    color: $colorBlack;
+    color: #474747;
     @include columnCenter;
     width: 35%;
     margin: auto;
     text-align: $posCenter;
-    color: #474747;
+    font-family: $fontInter;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+    padding-bottom: 44px;
+    position: relative;
 }
 
 .brandTitle::after {
     @include pseudoElement;
-    background-color: #c4c4c4;
+    background-color: rgba(196, 196, 196, 0.4);
     width: 524px;
     height: 3px;
-    left: 0;
     bottom: 0;
 }
 
@@ -602,6 +692,7 @@ li {
 .brands img {
     width: 100px;
     height: 50px;
+    object-fit: contain;
 }
 
 .brandDesc {
@@ -615,7 +706,7 @@ li {
 .buttonBrands {
     background-color: $mainColor;
     color: $colorWhite;
-    padding: 15px 32px;
+    padding: 15px 16px;
     text-align: $posCenter;
     text-decoration: none;
     font-size: 16px;
@@ -626,6 +717,12 @@ li {
     margin: auto;
     border-radius: 5px;
 }
+
+.buttonBrands:hover {
+    color: $colorBlack;
+}
+
+/*Footer Section*/
 
 .footerContainer {
     background-image: url('../assets/images/footerbg.png');
@@ -669,9 +766,15 @@ li {
     color: $colorWhite;
 }
 
+.contacts a:hover {
+    color: $mainColor;
+}
+
 .footerCompanyName {
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 700;
+    line-height: 34px;
+    font-family: $fontInter;
 }
 
 .footerNavbar {
@@ -680,7 +783,6 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 1rem;
     height: 200px;
     font-size: 12px;
     border-left: 1px solid rgba(255, 255, 255, 0.26);
@@ -690,6 +792,14 @@ li {
 .footerNavbar a {
     color: $colorWhite;
     text-decoration: none;
+    font-family: $fontRC;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.footerNavbar a:hover {
+    color: $mainColor;
 }
 
 .footerSocialmedia {
@@ -698,11 +808,27 @@ li {
     justify-content: flex-start;
     align-items: flex-start;
     font-size: 12px;
-    gap: 2rem;
+    gap: 1rem;
     height: 200px;
     border-left: 1px solid rgba(255, 255, 255, 0.26);
     padding: 0px 0px 15px 25px;
 }
+
+.smlogos {
+    gap: 1rem;
+    @include rowCenter;
+}
+
+.smlogos a {
+    color: $colorWhite;
+    font-size: 12pt;
+}
+
+.smlogos a:hover {
+    color: $mainColor;
+}
+
+/*Copyright Section*/
 
 .copyrightContent {
     position: $posAbsolute;
@@ -723,10 +849,20 @@ li {
     text-decoration: underline;
     color: rgba(255, 255, 255, 0.3);
     margin-top: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+}
+
+.copyright a:hover {
+    color: $mainColor;
 }
 
 .copyright span {
     margin-top: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.03em;
 }
 
 /* Responsibility */
@@ -767,9 +903,11 @@ li {
     .homeImg {
         display: flex;
         justify-content: $posCenter;
+        ;
         align-items: $posCenter;
+        object-fit: contain;
     }
-    
+
     .homeContainer {
         @include columnCenter;
     }
@@ -793,40 +931,56 @@ li {
     .brandsCard {
         @include columnCenter;
     }
+
     .navigationContainer {
         display: none;
     }
 
-    .dropdown {
-        display: block;
-    }
     .header {
         @include rowCenter;
         gap: 10rem;
         padding: 0;
     }
 
-    .dropdown-content span {
+    .topnav a {
+        display: block;
+    }
+
+    .topnav a:not(:first-child) {
         display: none;
     }
+
+    .topnav a.icon {
+        display: block;
+    }
+
+    .topnav-element {
+        display: none;
+    }
+
+    .topnav.responsive a {
+        display: block;
+        text-align: center;
+    }
+
 
 }
 
 @media only screen and (min-width: 1100px) {
-  
+
     #slider-container #slider .slide {
-      width: calc(2.5% - 20px);
+        width: calc(2.5% - 20px);
     }
-  
-  }
-  
-  @media only screen and (max-width: 1100px) {
-  
+
+}
+
+@media only screen and (max-width: 1100px) {
+
     #slider-container #slider .slide {
-      width: calc(3.3333333% - 20px);
+        width: calc(3.3333333% - 20px);
     }
-  
-  }
+
+}
 
 @media only screen and (max-width: 1070px) {
     .footerContents {
@@ -861,6 +1015,7 @@ li {
         text-align: $posCenter;
         margin-top: 0;
     }
+
     .copyright a {
         margin-top: 0;
     }
@@ -892,9 +1047,6 @@ li {
         height: 120px;
     }
 
-    .dropdown-content span {
-        display: block;
-    }
 
     #slider-container #slider .slide {
         width: calc(5% - 20px);
@@ -906,6 +1058,7 @@ li {
         @include columnCenter;
 
     }
+
     .fixedDesc span {
         display: flex;
         justify-content: $posCenter;
@@ -924,6 +1077,12 @@ li {
         height: 100%;
         top: 50px;
 
+    }
+
+    .homeContainer {
+        padding-bottom: 25px;
+        padding-top: 25px;
+        gap: 0;
     }
 
     .headerContainer {
@@ -957,14 +1116,22 @@ li {
         margin-top: 50px;
     }
 
+    .buttonBrands {
+        padding: 10px 10px;
+    }
+
+    .buttonInfo {
+        padding: 10px 10px;
+    }
+
 }
 
 @media only screen and (max-width: 550px) {
-  
+
     #slider-container #slider .slide {
-      width: calc(10% - 20px);
+        width: calc(10% - 20px);
     }
-  
+
 }
 
 @media only screen and (max-width: 524px) {
@@ -990,6 +1157,10 @@ li {
 
     }
 
+    .homeImg {
+        height: 250px;
+    }
+
     .companyContainer {
         margin-top: 25px;
     }
@@ -1009,6 +1180,14 @@ li {
         font-size: 25px;
         text-align: $posCenter;
     }
+
+    .buttonBrands {
+        padding: 5px 5px;
+    }
+
+    .buttonInfo {
+        padding: 5px 5px;
+    }
 }
 
 @media only screen and (max-width: 375px) {
@@ -1026,6 +1205,7 @@ li {
     .popup {
         width: 50%;
     }
+
     .header {
         @include columnCenter;
         gap: 1rem;
@@ -1036,12 +1216,3 @@ li {
         height: 115px;
     }
 }
-
-
-
-
-
-
-
-
-
